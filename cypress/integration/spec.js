@@ -31,4 +31,15 @@ describe('HTML', () => {
     cy.get('main > ol > li')
       .should('have.length', 3)
   })
+
+  it('04_nested_list.html', () => {
+    cy.visit(BASE + '04_nested_list.html')
+
+    cy.get('main > ol > li')
+      .should('have.length', 2)
+    cy.get('main > ol > li > ul > li')
+      .should('have.length', 3)
+    cy.get('main > ol > li > ol > li')
+      .should('have.length', 3)
+  })
 })
