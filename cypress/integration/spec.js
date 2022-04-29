@@ -49,4 +49,25 @@ describe('HTML', () => {
     cy.get('body > nav > ol > li')
       .should('have.length', 3)
   })
+
+  it('06_text.html', () => {
+    cy.visit(BASE + '06_text.html')
+
+    cy.get('main').within(() => {
+      cy.get('h1')
+        .should('have.text', '{book name}')
+      cy.get('h2:nth-of-type(1)')
+        .should('include.text', "Chapter 1: I'm a chapter")
+      cy.get('h2:nth-of-type(2)')
+        .should('include.text', "Chapter 2: I'm another chapter")
+      cy.get('h3')
+        .should('have.text', "Sub-Chapter 2.1: I'm the first part of chapter 2")
+      cy.get('p:nth-of-type(1)')
+        .should('include.text', "I'm a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+      cy.get('p:nth-of-type(2)')
+        .should('include.text', "I'm a paragraph. Donec vel tellus sem. Donec in lorem quis arcu viverra accumsan vitae tempus augue.")
+      cy.get('p:nth-of-type(3)')
+        .should('include.text', "I'm a paragraph. Quisque commodo leo a")
+    })
+  })
 })
