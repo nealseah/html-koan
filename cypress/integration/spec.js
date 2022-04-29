@@ -22,4 +22,13 @@ describe('HTML', () => {
     cy.get('body > footer')
       .should('contain', 'This is the footer of this website')
   })
+
+  it('03_list.html', () => {
+    cy.visit(BASE + '03_list.html')
+
+    cy.get('main > ul > li')
+      .should('have.length', 3)
+    cy.get('main > ol > li')
+      .should('have.length', 3)
+  })
 })
