@@ -42,4 +42,11 @@ describe('HTML', () => {
     cy.get('main > ol > li > ol > li')
       .should('have.length', 3)
   })
+
+  it('05_navigation.html', () => {
+    cy.visit(BASE + '05_navigation.html')
+
+    cy.get('body > nav > ol > li')
+      .should('have.length', 3)
+  })
 })
