@@ -4,16 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run --headless -b chrome"
+    "test": "cypress run --headless -b chrome"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.6.0",
-    "cypress-fail-fast": "^3.4.1",
-    "jest": "^28.0.3"
+    "cypress-fail-fast": "^3.4.1"
   }
 }
