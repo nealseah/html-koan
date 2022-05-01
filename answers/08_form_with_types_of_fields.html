@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>
+      <p>
+        <!-- A single-line text field -->
+        <label for="fullname">Full Name: </label>
+        <input type="text" name="fullname" id="fullname" placeholder="e.g. Joe Lee">
+      </p>
+      <p>
+        <!-- A password field with 8 characters at least -->
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" minlength="8">
+      </p>
+      <p>
+        <!-- A single-line text field for entering search strings -->
+        <label for="keyword">Search: </label>
+        <input type="search" name="keyword" id="keyword">
+      </p>
+      <p>
+        <!-- A field for entering a URL -->
+        <label for="blog">Your blog: </label>
+        <input type="url" name="blog" id="blog">
+      </p>
+      <p>
+        <!-- A control for entering a telephone number -->
+        <label for="phone">Your phone: </label>
+        <input type="tel" name="phone" id="phone">
+      </p>
+      <p>
+        <!-- A control for entering an e-mail address -->
+        <label for="email">Your e-mail: </label>
+        <input type="email" name="email" id="email">
+      </p>
+      <p>
+        <!-- A control for entering a number -->
+        <label for="age">Your age: </label>
+        <input type="number" name="age" id="age">
+      </p>
+      <p>
+        <!-- A multi-line text field -->
+        <label for="bio">Your bio: </label>
+        <textarea name="bio" id="bio"></textarea>
+      </p>
+      <p id="season">
+        <!-- Field of season, consisting of 4 radio buttons, each one stand for
+          a season, the first option is initially selected -->
+        <label>Pick a season: </label>
+        <label>
+          <input type="radio" name="season" value="spring" checked>Spring
+        </label>
+        <label>
+          <input type="radio" name="season" value="summer">Summer
+        </label>
+        <label>
+          <input type="radio" name="season" value="autumn">Autumn
+        </label>
+        <label>
+          <input type="radio" name="season" value="winter">Winter
+        </label>
+      </p>
+      <p id="lang">
+        <!-- Field of language, consisting of 3 check boxes, each one stand for
+          a language, the second option is initially selected -->
+        <label>Language: </label>
+        <label>
+          <input type="checkbox" name="language" value="go">Go
+        </label>
+        <label>
+          <input type="checkbox" name="language" value="js" checked>JavaScript
+        </label>
+        <label>
+          <input type="checkbox" name="language" value="python">Python
+        </label>
+      </p>
+      <p>
+        <!-- A drop-down control consisting of 3 options. The last option is initially selected -->
+        <label for="fruit">Your favorite fruit?</label>
+        <select id="fruit" name="fruit">
+          <option>Apple</option>
+          <option>Durian</option>
+          <option selected>Pear</option>
+        </select>
+      </p>
+      <p>
+        <!-- A slider control to set the brightness, which range from 0 to 100 -->
+        <label for="brightness">Set brightness: </label>
+        <input type="range" id="brightness" name="brightness" min=0 max=100>
+      </p>
+      <p>
+        <!-- A date control to pick a date as your birthday -->
+        <label for="birthday">Your birthday: </label>
+        <input type="date" id="birthday" name="birthday">
+      </p>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
