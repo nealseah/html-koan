@@ -70,4 +70,15 @@ describe('HTML', () => {
         .should('include.text', "I'm a paragraph. Quisque commodo leo a")
     })
   })
+
+  it('07_form_basic.html', () => {
+    cy.visit(BASE + '07_form_basic.html')
+
+    cy.get('body > form').within(() => {
+      cy.get('label[for="fruit"]')
+      cy.get('input[type="text"][name="the_fruit"]')
+      cy.get('input[type="submit"][value="submit"]')
+      cy.get('input[type="reset"][value="clear all"]')
+    })
+  })
 })
