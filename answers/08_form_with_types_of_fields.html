@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <title>Form with types of fields</title>
+  </head>
   <body>
     <form>
       <p>
@@ -85,14 +88,14 @@
       <p>
         <!-- A slider control to set the brightness, which range from 0 to 100 -->
         <label for="brightness">Set brightness: </label>
-        <input type="range" id="brightness" name="brightness" min=0 max=100>
+        <input type="range" id="brightness" name="brightness" min="0" max="100">
       </p>
       <p>
         <!-- A date control to pick a date as your birthday -->
         <label for="birthday">Your birthday: </label>
         <input type="date" id="birthday" name="birthday">
       </p>
-      <input type="submit" value="submit">
+      <button type="submit">submit</button>
     </form>
   </body>
 </html>

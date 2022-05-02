@@ -6,7 +6,7 @@ describe('HTML', () => {
 
     cy.get('html > head > meta').should('have.attr', 'charset', 'utf-8')
     cy.title().should('eq', 'My first html page')
-    cy.contains('body', 'This is my first html page.')
+    cy.contains('body', 'This is body of my first html page.')
   })
 
   it('02_structure.html', () => {
@@ -64,8 +64,8 @@ describe('HTML', () => {
     cy.get('body > form').within(() => {
       cy.get('label[for="fruit"]')
       cy.get('input[type="text"][name="the_fruit"]')
-      cy.get('input[type="submit"][value="submit"]')
-      cy.get('input[type="reset"][value="clear all"]')
+      cy.contains('button[type="submit"]', 'submit')
+      cy.contains('button[type="reset"]', 'clear all')
     })
   })
 
