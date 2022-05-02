@@ -91,4 +91,16 @@ describe('HTML', () => {
       cy.get('label[for="birthday"]+input#birthday[type="date"]')
     })
   })
+
+  it('09_form_with_structure.html', () => {
+    cy.visit(BASE + '09_form_with_structure.html')
+
+    cy.get('main > form > fieldset').within(($fieldsets) => {
+      expect($fieldsets).have.length(4)
+      cy.contains('> legend', 'Profile')
+      cy.contains('> legend', 'Contact Information')
+      cy.contains('> legend', 'Skills')
+      cy.contains('> legend', 'Education')
+    })
+  })
 })
