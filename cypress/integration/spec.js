@@ -4,7 +4,8 @@ describe('HTML', () => {
   it('01_head.html', () => {
     cy.visit(BASE + '01_head.html')
 
-    cy.get('html > head > meta').should('have.attr', 'charset', 'utf-8')
+    cy.get('html[lang="en"]')
+    cy.get('html > head > meta[charset="utf-8"]')
     cy.title().should('eq', 'My first html page')
     cy.contains('body', 'This is body of my first html page.')
   })
