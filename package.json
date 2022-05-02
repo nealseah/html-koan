@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run --headless -b chrome",
-    "lint": "html-validate answers"
+    "lint": "html-validate tasks",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.html": ["html-validate", "npm test"],
+    "*spec.js": "exit 1"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +18,8 @@
   "devDependencies": {
     "cypress": "^9.6.0",
     "cypress-fail-fast": "^3.4.1",
-    "html-validate": "^6.9.1"
+    "html-validate": "^6.9.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1"
   }
 }
