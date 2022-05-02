@@ -4,70 +4,57 @@ describe('HTML', () => {
   it('01_head.html', () => {
     cy.visit(BASE + '01_head.html')
 
-    cy.get('html > head > meta')
-      .should('have.attr', 'charset', 'utf-8')
-    cy.title()
-      .should('eq', 'My first html page')
-    cy.get('body')
-      .should('contain', 'This is my first html page.')
+    cy.get('html > head > meta').should('have.attr', 'charset', 'utf-8')
+    cy.title().should('eq', 'My first html page')
+    cy.contains('body', 'This is my first html page.')
   })
 
   it('02_structure.html', () => {
     cy.visit(BASE + '02_structure.html')
 
-    cy.get('body > header')
-      .should('contain', 'This is the header of this website')
-    cy.get('body > main')
-      .should('contain', 'This is the main content of this page')
-    cy.get('body > footer')
-      .should('contain', 'This is the footer of this website')
+    cy.get('body').within(() => {
+      cy.contains('header', 'This is the header of this website')
+      cy.contains('main', 'This is the main content of this page')
+      cy.contains('footer', 'This is the footer of this website')
+    })
   })
 
   it('03_list.html', () => {
     cy.visit(BASE + '03_list.html')
 
-    cy.get('main > ul > li')
-      .should('have.length', 3)
-    cy.get('main > ol > li')
-      .should('have.length', 3)
+    cy.get('main').within(() => {
+      cy.get('> ul > li').should('have.length', 3)
+      cy.get('> ol > li').should('have.length', 3)
+    })
   })
 
   it('04_nested_list.html', () => {
     cy.visit(BASE + '04_nested_list.html')
 
-    cy.get('main > ol > li')
-      .should('have.length', 2)
-    cy.get('main > ol > li > ul > li')
-      .should('have.length', 3)
-    cy.get('main > ol > li > ol > li')
-      .should('have.length', 3)
+    cy.get('main > ol').within(() => {
+      cy.get('> li').should('have.length', 2)
+      cy.get('> li > ul > li').should('have.length', 3)
+      cy.get('> li > ol > li').should('have.length', 3)
+    })
   })
 
   it('05_navigation.html', () => {
     cy.visit(BASE + '05_navigation.html')
 
-    cy.get('body > nav > ol > li')
-      .should('have.length', 3)
+    cy.get('body > nav > ol > li').should('have.length', 3)
   })
 
   it('06_text.html', () => {
     cy.visit(BASE + '06_text.html')
 
     cy.get('main').within(() => {
-      cy.get('h1')
-        .should('have.text', '{book name}')
-      cy.get('h2:nth-of-type(1)')
-        .should('include.text', "Chapter 1: I'm a chapter")
-      cy.get('h2:nth-of-type(2)')
-        .should('include.text', "Chapter 2: I'm another chapter")
-      cy.get('h3')
-        .should('have.text', "Sub-Chapter 2.1: I'm the first part of chapter 2")
-      cy.get('p:nth-of-type(1)')
-        .should('include.text', "I'm a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-      cy.get('p:nth-of-type(2)')
-        .should('include.text', "I'm a paragraph. Donec vel tellus sem. Donec in lorem quis arcu viverra accumsan vitae tempus augue.")
-      cy.get('p:nth-of-type(3)')
-        .should('include.text', "I'm a paragraph. Quisque commodo leo a")
+      cy.contains('> h1', '{book name}')
+      cy.contains('> h2', "Chapter 1: I'm a chapter")
+      cy.contains('> h2', "Chapter 2: I'm another chapter")
+      cy.contains('> h3', "Sub-Chapter 2.1: I'm the first part of chapter 2")
+      cy.contains('> p', "I'm a paragraph. Lorem ipsum dolor sit amet")
+      cy.contains('> p', "I'm a paragraph. Donec vel tellus sem.")
+      cy.contains('> p', "I'm a paragraph. Quisque commodo leo a")
     })
   })
 
