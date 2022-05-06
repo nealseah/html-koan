@@ -3,6 +3,6 @@
   "screenshotOnRunFailure": false,
   "defaultCommandTimeout": 0,
   "env": {
-    "base": "./answers/"
+    "base": "./tasks/"
   }
 }
