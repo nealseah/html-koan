@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --headless -b chrome",
+    "test": "cypress run --headless -q",
     "lint": "html-validate tasks",
     "play": "find tasks -name '*.html' | entr npm test",
     "postinstall": "husky install"
